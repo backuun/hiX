@@ -12,7 +12,7 @@ export default function Footer() {
             <div className={styles.footer_header}>
                 <div className={styles.footer_company}>
                     <img src="images/logo.png" alt="Kenali Diri Logo" />
-                    <p>Nama domain 'www.hix.id' adalah milik PT. Prahwa Sakha, perusahaan ekspedisi yang menawarkan layanan pengiriman cepat dan handal.</p>
+                    <p>Nama domain www.hix.id adalah milik PT. Prahwa Sakha, perusahaan ekspedisi yang menawarkan layanan pengiriman cepat dan handal.</p>
                     <div className={styles.social_media}>
                         <img src="images/qr_image.png" alt="HiXpress"/>
                         <img src="images/google_play_image.png" alt="HiXpress"/>
