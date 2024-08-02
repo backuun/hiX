@@ -1,0 +1,110 @@
+.nav{
+    background-color: #280D6C;
+    display: grid;
+    grid-template-columns: 14% 86%;
+    padding: 0 3.4vw;
+    padding-right: 0;
+}
+.logo{
+    padding-top: 1vw;
+    padding-bottom: .5vw;
+}
+.logo img{
+    width: 95%;
+    margin-right: auto;
+}
+.header_layout_top{
+    background-color: #009E96;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .8vw 0;
+    padding-right: 3.3vw;
+    padding-left: 3.5vw;
+    position: relative;
+}
+.decoration{
+    position: absolute;
+    left: -1.1vw;
+    top: -2vw;
+    height: 6vw;
+    transform: rotate(-35deg);
+    width: 2vw;
+    background-color: #280D6C;
+}
+.header_content{
+    align-items: center;
+    display: flex;
+}
+.header_contact{
+    padding: 0 1.2vw;
+    display: flex;
+    align-items: center;
+    gap: .4vw;
+    border-right: .1vw solid white;
+    color: white;
+}
+.header_contact:last-child{
+    border-right: none;
+}
+.header_contact svg{
+    font-size: 1.1vw;
+}
+.header_contact span{
+    font-size: .78vw;
+}
+.sosmed_layout{
+    display: flex;
+    gap: .84vw;
+}
+.sosmed_box{
+    display: flex;
+    align-items: center;
+}
+.sosmed_box svg{
+    font-size: 1vw;
+    color: white;
+}
+.header_layout_bottom{
+    padding-right: 11vw;
+}
+.header_layout_bottom ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2.3vw;
+    margin-top: 1.67vw;
+}
+.header_layout_bottom ul li{
+    list-style: none;
+    font-size: 1.16vw;
+    font-weight: 300;
+    color: white;
+}
+.header_layout_bottom ul li.active a {
+    color: #009E96; /* Active menu item color */
+    font-weight: 600;
+}
+.search_header{
+    margin-left: 1.3vw;
+    border-left: .1vw solid white;
+    border-right: .1vw solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .1vw .9vw;
+}
+.search_header input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: .77vw;
+}
+.search_header input::placeholder{
+    color: rgba(255, 255, 255, 0.616);
+}
+.search_header svg{
+    font-size: 1vw;
+    color: white;
+}
