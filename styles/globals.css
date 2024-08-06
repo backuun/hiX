@@ -172,7 +172,11 @@ a {
 .swiperPartner .swiper-wrapper{
   padding-bottom: 5vw !important;
 }
-
+@media (max-width:768px) {
+  .swiperPartner .swiper-wrapper{
+    padding-bottom: 12vw !important;
+  }
+}
 
 .swiperPartner .swiper-pagination-bullet {
   width: .8vw !important;
@@ -191,12 +195,32 @@ a {
   margin: 0 .57vw !important;
 }
 
+@media (max-width:768px) {
+  .swiperPartner .swiper-pagination-bullet {
+    width: 1.7vw !important;
+    height: 1.7vw !important;
+  }
+  .swiperPartner .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiperPartner .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 .8vw !important;
+  }
+}
+
 .swiperArtikel{
   padding: 0 11.4vw !important;
+}
+@media (max-width:768px) {
+  .swiperArtikel{
+    padding: 0 5vw !important;
+  }
 }
 
 .swiperArtikel .swiper-wrapper{
   padding-bottom: 5vw !important;
+}
+@media (max-width:768px) {
+  .swiperArtikel .swiper-wrapper{
+    padding-bottom: 12vw !important;
+  }
 }
 .swiperArtikel .swiper-pagination-bullet {
   width: .8vw !important;
@@ -213,6 +237,15 @@ a {
 }
 .swiperArtikel .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiperArtikel .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 .57vw !important;
+}
+@media (max-width:768px) {
+  .swiperArtikel .swiper-pagination-bullet {
+    width: 2.3vw !important;
+    height: 2.3vw !important;
+  }
+  .swiperArtikel .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiperArtikel .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 .97vw !important;
+  }
 }
 .swiperArtikel .swiper-button-prev, .swiperArtikel .swiper-button-next {
   position: absolute;
@@ -232,4 +265,28 @@ a {
   align-items: center;
   justify-content: center;
   color: #009E96 !important;
+}
+@media (max-width:768px) {
+  .swiper-slide img{
+    height: 90vw;
+    object-fit: cover;
+  }
+  .swiper-button-prev, .swiper-button-next {
+    border: .12vw solid rgba(255, 255, 255, 0.664) !important;
+    padding: 5vw !important;
+    border-radius: 100vw !important;
+  }
+  .swiper-button-prev:after, .swiper-button-next:after {
+    font-size: 3.3vw !important;
+  }
+  .mySwiper .swiper-pagination-bullet {
+    width: 1.9vw !important;
+    height: 1.9vw !important;
+  }
+  .mySwiper .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .mySwiper .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 1.2vw !important;
+  }
+  .swiperArtikel .swiper-button-prev, .swiperArtikel .swiper-button-next{
+    display: none;
+  }
 }

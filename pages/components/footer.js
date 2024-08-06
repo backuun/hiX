@@ -74,7 +74,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className={styles.copyrightMobile}>
-                <span>©️ 2024 Kenali Diri | ID</span>
+                <span>©️ 2024 Hixpress | ID</span>
             </div>
         </div>
         

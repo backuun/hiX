@@ -4,21 +4,33 @@ import { FaInstagram, FaFacebook, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { MdPhone, MdEmail } from "react-icons/md";
 import { LuSearch } from "react-icons/lu";
 import { useRouter } from "next/router";
+import { IoIosMenu } from "react-icons/io";
+import { IoCloseOutline } from "react-icons/io5";
+import { useState } from "react";
 
 export default function Header() {
     const router = useRouter();
+    const [menuActive, setMenuActive] = useState(false);
 
     const isActive = (path) => {
         return router.asPath === path ? styles.active : '';
     };
 
+    const handleHamburger = () => {
+        setMenuActive(!menuActive);
+    }
+
     return(
         <>
         <div className={styles.nav}>
             <div className={styles.logo}>
-                <img src="/images/logo.png" alt="Logo HiXpress"/>
+                <img src="/images/logo.png" alt="Logo HiXpress"/> 
             </div>
-            <div className={styles.header_layout}>
+            <button className={styles.hamburger} onClick={handleHamburger}>
+                <IoIosMenu/>
+            </button>
+            <div className={`${styles.header_layout} ${menuActive ? styles.active : ''}`}>
+                <button className={styles.close_button} onClick={handleHamburger}><IoCloseOutline/></button>
                 <div className={styles.header_layout_top}>
                     <div className={styles.decoration}></div>
                     <div className={styles.header_content}>

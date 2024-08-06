@@ -108,3 +108,107 @@
     font-size: 1vw;
     color: white;
 }
+.hamburger{
+    display: none;
+}
+.close_button{
+    display: none;
+}
+@media (max-width:768px) {
+    .nav{
+        background-color: #280D6C;
+        display: flex;
+        justify-content: space-between;
+        padding: 1vw 4vw;
+        padding-right: 4vw;
+    }
+    .logo{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .logo img{
+        width: 24vw;
+        margin-right: auto;
+    }
+    .hamburger{
+        display: block;
+        background-color: transparent;
+        outline: none;
+        border: none;
+    }
+    .hamburger svg{
+        font-size: 9vw;
+        color: #009E96;
+    }
+    .header_layout_top{
+        display: none;
+    }
+    .header_layout{
+        position: fixed;
+        transform: translateX(100%);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, 0.356);
+        transition: .4s all;
+        opacity: 0;
+    }
+    .header_layout.active{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    .header_layout_bottom{
+        background-color: #280D6C;
+        width: 60%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        padding: 6.5vw 4vw;
+        border-right: 1.7vw solid #009E96;
+        transform: translateX(-400%);
+        transition: .4s all;
+    }
+    .header_layout.active .header_layout_bottom{
+        transform: translateX(0);
+    }
+    .header_layout_bottom ul{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0;
+    }
+    .header_layout_bottom ul li{
+        font-size: 4.5vw;
+        width: 100%;
+        border-bottom: .1vw solid rgba(255, 255, 255, 0.342);
+    }
+    .header_layout_bottom ul li a{
+        display: block;
+        width: 100%;
+        padding: 4.4vw 0;
+    }
+    .close_button{
+        display: block;
+        position: absolute;
+        right: 4vw;
+        top: 4vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 100vw;
+        background-color: #009E96;
+        outline: none;
+        border: .2vw solid #280D6C;
+    }
+    .close_button svg{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 6.5vw;
+        color: #280D6C;
+    }
+}

@@ -157,10 +157,24 @@ export default function Home() {
         </div>
         <div className={styles.partner_slide}>
           <Swiper
-            slidesPerView={4}
-            spaceBetween={45}
+            slidesPerView={2}
+            spaceBetween={20}
             pagination={{
               clickable: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 45,
+              },
             }}
             modules={[Pagination]}
             className="swiperPartner"
@@ -201,11 +215,25 @@ export default function Home() {
           <Swiper
             cssMode={true}
             navigation={true}
-            slidesPerView={2}
-            spaceBetween={40}
+            slidesPerView={1}
+            spaceBetween={16}
             loop={true}
             pagination={{
               clickable: true,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+              },
             }}
             modules={[Pagination, Navigation]}
             className="swiperArtikel"
