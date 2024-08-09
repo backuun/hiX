@@ -6,6 +6,7 @@ import { FaPaperPlane } from "react-icons/fa";
 import { FaInbox } from "react-icons/fa";
 import { FaTruck } from "react-icons/fa";
 import { FaHistory } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 export default function LacakPaket(){
     return(
@@ -87,6 +88,65 @@ export default function LacakPaket(){
                         <div className={styles.shipping_status_box}>
                             <h5>PESANAN TELAH SAMPAI</h5>
                             <span>02-08-2024 - 16:57</span>
+                        </div>
+                    </div>
+                    <div className={styles.user_shipping}>
+                        <FaUser/>
+                        <div className={styles.user_shipping_data}>
+                            <span>Nama Penerima</span>
+                            <h1>Rafli</h1>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.shipping_status}>
+                    <div className={styles.popup_heading}>
+                        <FaInbox/>
+                        <h3>Shipment Detail</h3>
+                    </div>
+                    <div className={styles.user_shipping}>
+                        <div className={styles.user_shipping_data}>
+                            <span>Deskripsi Barang</span>
+                            <h3>Energizer Facial Wash - Ms Glow for Men - Face Wash Pria Ms - 1kg</h3>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.shipping_status}>
+                    <div className={styles.popup_heading}>
+                        <FaUser/>
+                        <h3>Shipper Information</h3>
+                    </div>
+                    <div className={styles.flex_column_gap}>
+                        <div className={styles.user_shipping}>
+                            <div className={styles.user_shipping_data}>
+                                <span>Nama Pengirim</span>
+                                <h3>Bening's Official Store</h3>
+                            </div>
+                        </div>
+                        <div className={styles.user_shipping}>
+                            <div className={styles.user_shipping_data}>
+                                <span>Kota Pengirim</span>
+                                <h3>Kota Bandung</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.shipping_status}>
+                    <div className={styles.popup_heading}>
+                        <FaUser/>
+                        <h3>Informasi Penerima</h3>
+                    </div>
+                    <div className={styles.flex_column_gap}>
+                        <div className={styles.user_shipping}>
+                            <div className={styles.user_shipping_data}>
+                                <span>Nama Penerima</span>
+                                <h3>Rafli</h3>
+                            </div>
+                        </div>
+                        <div className={styles.user_shipping}>
+                            <div className={styles.user_shipping_data}>
+                                <span>Kota Penerima</span>
+                                <h3>Purbaratu, Tasikmalaya</h3>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -109,7 +109,22 @@
     z-index: 2;
     border-radius: .86vw;
     padding: 1.2vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
+.popup_box::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+.popup_box::-webkit-scrollbar-track {
+    background: #e4e4e4; 
+  }
+   
+  /* Handle */
+.popup_box::-webkit-scrollbar-thumb {
+    background: #280D6C; 
+  }
 .popup_heading{
     display: flex;
     justify-content: flex-start;
@@ -198,4 +213,37 @@
     font-size: .75vw;
     font-weight: 500;
     color: #009E96;
+}
+
+.flex_column_gap{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.user_shipping{
+    padding: 0 1.55vw;
+    display: flex;
+    gap: .6vw;
+}
+.user_shipping svg{
+    font-size: .9vw;
+    color: #009E96;
+}
+.user_shipping_data span{
+    font-size: .86vw;
+    font-weight: 600;
+    color: #009E96;
+}
+.user_shipping_data h1{
+    text-transform: uppercase;
+    font-size: 1.9vw;
+    margin-top: .3vw;
+    color: #1A0353;
+}
+.user_shipping_data h3{
+    text-transform: uppercase;
+    font-size: 1.1vw;
+    margin-top: .5vw;
+    color: #1A0353;
 }
