@@ -8,9 +8,15 @@ import { FaTruck } from "react-icons/fa";
 import { FaHistory } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { BsArrowLeft } from "react-icons/bs";
+import { useState } from 'react';
 
 
 export default function LacakPaket(){
+    const [isActive, setIsActive] = useState(false);
+
+    const togglePopup = () => {
+        setIsActive(!isActive);
+    };
     return(
         <>
         <div className={styles.bg_page}>
@@ -27,21 +33,19 @@ export default function LacakPaket(){
                 <div className={styles.section1_box}>
                     <h1>Pelacakan Paket</h1>
                     <p>Silakan masukkan nomor resi Anda pada formulir berikut</p>
-                    <form>
-                        <div className={styles.search_box}>
-                            <input type='text'/>
-                            <CiSearch/>
-                        </div>
-                        <button>Lacak Sekarang</button>
-                    </form>
+                    <div className={styles.search_box}>
+                        <input type='text'/>
+                        <CiSearch/>
+                    </div>
+                    <button onClick={togglePopup}>Lacak Sekarang</button>
                 </div>
             </div>
         </div>
-        <div className={styles.popup_lacak}>
-            <div className={styles.overlay}></div>
+        <div className={`${styles.popup_lacak} ${isActive ? styles.active : ''}`}>
+            <div className={styles.overlay} onClick={togglePopup}></div>
             <div className={styles.popup_box}>
                 <div className={styles.popup_menu}>
-                    <BsArrowLeft/>
+                    <BsArrowLeft onClick={togglePopup}/>
                     <h3>Lacak Pengiriman</h3>
                 </div>
                 <div className={styles.popup_heading}>
