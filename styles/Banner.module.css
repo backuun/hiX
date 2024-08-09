@@ -1,0 +1,26 @@
+.banner{
+    width: 100%;
+    height: 21vw;
+    position: relative;
+}
+.banner img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+}
+.breadcumbs{
+    width: 100%;
+    padding: 1.4vw 8.7vw;
+}
+.breadcumbs p{
+    font-size: 1.12vw;
+    color: #939393;
+}
+.breadcumbs span{
+    color: #009E96;
+    font-weight: 700;
+}
