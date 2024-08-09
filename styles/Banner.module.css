@@ -24,3 +24,14 @@
     color: #009E96;
     font-weight: 700;
 }
+@media (max-width:768px) {
+    .banner{
+        height: 38vw;
+    }
+    .breadcumbs{
+        padding: 4.5vw 5vw;
+    }
+    .breadcumbs p{
+        font-size: 3.5vw;
+    }
+}

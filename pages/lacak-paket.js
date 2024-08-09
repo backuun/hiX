@@ -7,6 +7,8 @@ import { FaInbox } from "react-icons/fa";
 import { FaTruck } from "react-icons/fa";
 import { FaHistory } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
+import { BsArrowLeft } from "react-icons/bs";
+
 
 export default function LacakPaket(){
     return(
@@ -21,6 +23,7 @@ export default function LacakPaket(){
             <div className={styles.section1}>
                 <img src='images/lacak_icon_1.png' className={styles.lacak_icon_1}/>
                 <img src='images/lacak_icon_2.png' className={styles.lacak_icon_2}/>
+                <img src='images/icon_lacak_mobile_2.png' className={styles.lacak_icon_mobile_2}/>
                 <div className={styles.section1_box}>
                     <h1>Pelacakan Paket</h1>
                     <p>Silakan masukkan nomor resi Anda pada formulir berikut</p>
@@ -37,6 +40,10 @@ export default function LacakPaket(){
         <div className={styles.popup_lacak}>
             <div className={styles.overlay}></div>
             <div className={styles.popup_box}>
+                <div className={styles.popup_menu}>
+                    <BsArrowLeft/>
+                    <h3>Lacak Pengiriman</h3>
+                </div>
                 <div className={styles.popup_heading}>
                     <FaPaperPlane/>
                     <h3>HIX20240801UN8LVCT27</h3>
