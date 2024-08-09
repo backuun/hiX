@@ -119,7 +119,7 @@ export default function LacakPaket(){
                         <div className={styles.user_shipping}>
                             <div className={styles.user_shipping_data}>
                                 <span>Nama Pengirim</span>
-                                <h3>Bening's Official Store</h3>
+                                <h3>Bening`s Official Store</h3>
                             </div>
                         </div>
                         <div className={styles.user_shipping}>
