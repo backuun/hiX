@@ -24,7 +24,7 @@ export default function Header() {
         <>
         <div className={styles.nav}>
             <div className={styles.logo}>
-                <img src="/images/logo.png" alt="Logo HiXpress"/> 
+                <img src="/images/logo_main.png" alt="Logo HiXpress"/> 
             </div>
             <button className={styles.hamburger} onClick={handleHamburger}>
                 <IoIosMenu/>

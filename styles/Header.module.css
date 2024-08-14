@@ -1,17 +1,19 @@
 .nav{
-    background-color: #280D6C;
+    background-color: white;
     display: grid;
     grid-template-columns: 14% 86%;
     padding: 0 3.4vw;
+    padding-bottom: 1.6vw;
     padding-right: 0;
 }
 .logo{
-    padding-top: 1vw;
     padding-bottom: .5vw;
+    
 }
 .logo img{
     width: 95%;
     margin-right: auto;
+    margin-bottom: -5.2vw;
 }
 .header_layout_top{
     background-color: #009E96;
@@ -30,7 +32,7 @@
     height: 6vw;
     transform: rotate(-35deg);
     width: 2vw;
-    background-color: #280D6C;
+    background-color: white;
 }
 .header_content{
     align-items: center;
@@ -78,8 +80,8 @@
 .header_layout_bottom ul li{
     list-style: none;
     font-size: 1.16vw;
-    font-weight: 300;
-    color: white;
+    font-weight: 400;
+    color: #280D6C;
 }
 .header_layout_bottom ul li.active a {
     color: #009E96; /* Active menu item color */
@@ -116,10 +118,10 @@
 }
 @media (max-width:768px) {
     .nav{
-        background-color: #280D6C;
+        background-color: white;
         display: flex;
         justify-content: space-between;
-        padding: 1vw 4vw;
+        padding: 1.9vw 4vw;
         padding-right: 4vw;
     }
     .logo{
