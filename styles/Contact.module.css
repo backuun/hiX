@@ -31,7 +31,7 @@
     font-size: 1.8vw;
     color: white;
     font-weight: 700;
-    margin-bottom: .2vw;
+    margin-bottom: .7vw;
 }
 .form_field_double{
     display: grid;
@@ -130,6 +130,53 @@
     border-width: 0 .12vw .12vw 0;
     transform: rotate(45deg);
   }
+  .addressDetail{
+    margin-bottom: 1.5vw;
+  }
+  .addressDetail h3{
+    font-size: .97vw;
+    color: white;
+    margin-bottom: .7vw;
+  }
+  .addressDetail p{
+    font-size: .97vw;
+    color: white;
+    font-weight: 400;
+    padding-right: 0vw;
+  }
+
+  .contact_detail h3{
+    font-size: .97vw;
+    color: white;
+    margin-bottom: .8vw;
+  }
+  .contact_layout{
+    display: flex;
+    gap: 1.6vw;
+    align-items: center;
+  }
+  .contact_box{
+    display: flex;
+    align-items: flex-start;
+    gap: .66vw;
+  }
+  .contact_box svg{
+    font-size: 2vw;
+    color: white;
+  }
+  .contact_box h5{
+    font-size: .97vw;
+    color: white;
+    font-weight: 600;
+  }
+
+  .contact_icon{
+    width: 15.7vw;
+    position: absolute;
+    right: 0;
+    bottom: 5vw;
+  }
+
 
 .divider_bottom{
     position: absolute;
