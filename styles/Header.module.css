@@ -186,6 +186,7 @@
     .header_layout_bottom ul li{
         font-size: 4.5vw;
         width: 100%;
+        color: white;
         border-bottom: .1vw solid rgba(255, 255, 255, 0.342);
     }
     .header_layout_bottom ul li a{

@@ -1,0 +1,339 @@
+.section_2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 41% 59%;
+}
+.section_2_image img{
+    width: 100%;
+    height: auto;
+}
+.section_2_text{
+    padding: 4vw 5.2vw;
+    padding-top: 3vw;
+}
+.section_2_text h1{
+    font-size: 2.33vw;
+    text-transform: capitalize;
+    font-weight: 700;
+    color: #280D6C;
+    margin-bottom: .7vw;
+}
+.section_2_text h4{
+    font-size: 1.63vw;
+    font-weight: 600;
+    color: #280D6C;
+    margin-bottom: 1.3vw;
+}
+.section_2_text p{
+    font-size: 1.12vw;
+    padding-right: 7vw;
+    color: #1A0353;
+    margin-bottom: 1.56vw;
+}
+
+.section_3{
+    width: 100%;
+    height: 22vw;
+    background-image: url(../public/images/section3_bg.png);
+    background-position: center;
+    background-size: cover;
+    padding: 5vw 2vw;
+}
+.section_3_heading{
+    text-align: center;
+}
+.section_3_heading h1{
+    font-size: 2.33vw;
+    color: #280D6C;
+    margin-bottom: .9vw;
+}
+.section_3_heading p{
+    font-size: 1.12vw;
+    color: #1A0353;
+    width: 48%;
+    margin: auto;
+}
+
+.section_4{
+    background: linear-gradient(90deg, #08827C 0%, #00887E 100%);
+    width: 100%;
+    position: relative;
+}
+.about_icon_1{
+    position: absolute;
+    right: 0;
+    top: -27vw;
+    width: 14vw;
+    display: block;
+}
+.about_icon_2{
+    position: absolute;
+    left: 0;
+    bottom: -5vw;
+    z-index: 100;
+    width: 14vw;
+}
+.vision_mision{
+    padding: 0 8vw;
+    display: grid;
+    grid-gap: 3.3vw;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+}
+.vision_mision_box{
+    background-color: #1A0353;
+    text-align: center;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2.5vw 4vw;
+    border-radius: 1.2vw;
+    border: .2vw solid #00887E;
+    margin-top: -4vw;
+    cursor: pointer;
+}
+.vision_mision_box p{
+    display: none;
+    font-size: 1.12vw;
+    color: #ffffff;
+    margin-top: 1vw;
+    font-weight: 300;
+}
+.vision_mision_box:hover p{
+    display: block;
+}
+.vision_mision_box ul{
+    display: none;
+    font-size: 1.12vw;
+    color: #ffffff;
+    text-align: start;
+    margin-top: 1vw;
+    font-weight: 300;
+    margin-left: 1vw;
+}
+.vision_mision_box:hover ul{
+    display: block;
+}
+.vision_mision_box h3{
+    color: white;
+    font-size: 2.33vw;
+    font-weight: 600;
+}
+
+.section8{
+    margin-top: 6vw;
+    text-align: center;
+    padding-bottom: 6vw;
+    position: relative;
+}
+.section8 span{
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: #ffffff;
+}
+.section8 h1{
+    font-size: 2.33vw;
+    text-transform: capitalize;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-top: 1.3vw;
+    margin-bottom: 1.85vw;
+    padding: 0 29vw;
+}
+
+.artikel_slide{
+    padding: 0 2.2vw;
+    margin-top: 4vw;
+}
+.box_artikel{
+    border-radius: 1.7vw;
+    overflow: hidden;
+    width: 100%;
+}
+.box_artikel span{
+    color: #00887E;
+}
+.image_artikel{
+    width: 100%;
+    height: 18.5vw;
+    position: relative;
+}
+.image_artikel img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.content_artikel{
+    background-color: white;
+    text-align: start;
+    padding: 2vw;
+    padding-top: 1.7vw;
+}
+.content_artikel span{
+    font-size: .92vw;
+    font-weight: 400;
+}
+.content_artikel h2{
+    font-size: 1.92vw;
+    font-weight: 600;
+    color: #280D6C;
+    margin-top: .68vw;
+    margin-bottom: .8vw;
+}
+.content_artikel p{
+    color: #280D6C;
+    font-size: 1.06vw;
+    padding-right: 4vw;
+}
+.content_artikel button{
+    margin-top: 1.75vw;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #009E96;
+    font-size: 1vw;
+    color: white;
+    font-weight: 500;
+    padding: .8vw 1.9vw;
+    border-radius: .6vw;
+}
+
+@media (max-width:768px) {
+    .section_2{
+        grid-template-columns: 100%;
+    }
+    .section_2_text{
+        padding: 4vw 5.2vw;
+        padding-top: 4vw;
+    }
+    .section_2_text h1{
+        font-size: 5vw;
+        margin-bottom: 3vw;
+    }
+    .section_2_text h4{
+        font-size: 3.5vw;
+        margin-bottom: 4vw;
+    }
+    .section_2_text p{
+        font-size: 3vw;
+        padding-right: 0;
+        margin-bottom: 3.56vw;
+    }
+
+    .section_3{
+        height: 60vw;
+        padding: 8vw 2vw;
+    }
+    .section_3_heading h1{
+        font-size: 5vw;
+        margin-bottom: 3vw;
+    }
+    .section_3_heading p{
+        font-size: 3vw;
+        width: 100%;
+        padding: 0 5vw;
+    }
+    .vision_mision{
+        padding: 0 8vw;
+        grid-gap: 4vw;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .vision_mision_box{
+        padding: 5vw 4vw;
+        border-radius: 2.5vw;
+        border: .28vw solid #00887E;
+        margin-top: -25vw;
+        margin-bottom: 27vw;
+    }
+    .vision_mision_box:last-child{
+        margin-bottom: 0;
+    }
+    .vision_mision_box h3{
+        font-size: 4.5vw;
+    }
+    .vision_mision_box p{
+        font-size: 3vw;
+        margin-top: 2vw;
+    }
+    .vision_mision_box ul{
+        font-size: 3vw;
+        margin-top: 2vw;
+        margin-left: 7vw;
+    }
+    .vision_mision_box ul li{
+        margin-bottom: 2vw;
+    }
+    .section8 span{
+        font-size: 3.8vw;
+    }
+    .section8 h1{
+        font-size: 5vw;
+        line-height: 1.4;
+        margin-top: 2.4vw;
+        margin-bottom: 7.3vw;
+        padding: 0 5vw;
+    }
+    .artikel_slide{
+        padding: 0 0;
+        margin-top: 6vw;
+    }
+
+    .section8{
+        margin-top: 8vw;
+        padding-bottom: 13vw;
+    }
+    .section8 span{
+        font-size: 3.8vw;
+    }
+    .box_artikel{
+        border-radius: 3.5vw;
+    }
+    .image_artikel{
+        height: 47vw;
+    }
+    .content_artikel span{
+        font-size: 3.6vw;
+    }
+    .content_artikel{
+        padding: 4vw;
+        padding-top: 3.4vw;
+    }
+
+    .content_artikel h2{
+        font-size: 4.7vw;
+        margin-top: 1.3vw;
+        margin-bottom: 2.5vw;
+    }
+    .content_artikel p{
+        font-size: 3.8vw;
+        padding-right: 4vw;
+    }
+    .content_artikel button{
+        margin-top: 5.75vw;
+        font-size: 3.8vw;
+        padding: 2.4vw 3.4vw;
+        border-radius: 1.6vw;
+    }
+
+    .about_icon_1{
+        position: absolute;
+        right: 0;
+        top: -67vw;
+        width: 14vw;
+        display: none;
+    }
+    .about_icon_2{
+        position: absolute;
+        left: 0;
+        bottom: -8vw;
+        z-index: 100;
+        width: 22vw;
+    }
+}

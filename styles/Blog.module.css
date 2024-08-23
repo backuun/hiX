@@ -1,0 +1,208 @@
+/* .artikel_slide{
+    padding: 0 2.2vw;
+    margin-top: 4vw;
+} */
+.box_artikel{
+    border-radius: 1.7vw;
+    overflow: hidden;
+    width: 100%;
+    
+}
+.box_artikel span{
+    color: white;
+}
+.image_artikel{
+    width: 100%;
+    height: 18.5vw;
+    position: relative;
+}
+.image_artikel img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.content_artikel{
+    background: linear-gradient(90deg, #08827C 0%, #00887E 100%);
+    text-align: start;
+    padding: 2vw;
+    padding-top: 1.7vw;
+}
+.content_artikel_grid{
+    padding: 1.2vw;
+    padding-top: 1.2vw;
+}
+.content_artikel span{
+    font-size: .92vw;
+    font-weight: 400;
+}
+.content_artikel_grid span{
+    font-size: .85vw;
+}
+.content_artikel h2{
+    font-size: 1.92vw;
+    font-weight: 600;
+    color: white;
+    margin-top: .68vw;
+    margin-bottom: .8vw;
+}
+.content_artikel_grid h2{
+    font-size: 1.3vw;
+    display: -webkit-box;            /* Flexbox untuk multi-line truncation */
+    -webkit-box-orient: vertical;    /* Orientasi box secara vertikal */
+    -webkit-line-clamp: 2;           /* Batasan pada 2 baris */
+    overflow: hidden;                /* Sembunyikan teks yang berlebih */
+    text-overflow: ellipsis;  
+}
+.content_artikel p{
+    color: white;
+    font-size: 1.06vw;
+    padding-right: 4vw;
+}
+.content_artikel_grid p{
+    font-size: .9vw;
+    padding-right: 0;
+    display: -webkit-box;            /* Flexbox untuk multi-line truncation */
+    -webkit-box-orient: vertical;    /* Orientasi box secara vertikal */
+    -webkit-line-clamp: 3;           /* Batasan pada 2 baris */
+    overflow: hidden;                /* Sembunyikan teks yang berlebih */
+    text-overflow: ellipsis;  
+}
+.content_artikel button{
+    margin-top: 1.75vw;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #009E96;
+    font-size: 1vw;
+    color: white;
+    font-weight: 500;
+    padding: .8vw 1.9vw;
+    border-radius: .6vw;
+}
+.content_artikel_grid button{
+    font-size: .93vw;
+    padding: .8vw 1.6vw;
+}
+
+.container_artikel{
+    width: 100%;
+    background-image: url(../public/images/section3_bg.png), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 158, 150, 0.33) 100%);
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-bottom: 3vw;
+    position: relative;
+}
+.heading_artikel{
+    padding: 0 8.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.7vw;
+    margin-top: 2vw;
+}
+.heading_artikel h1{
+    font-size: 1.8vw;
+    color: #280D6C;
+}
+.heading_artikel_grid{
+    text-align: start;
+    margin-bottom: 2.7vw;
+}
+.heading_artikel_grid h1{
+    font-size: 1.8vw;
+    color: white;
+    font-weight: 600;
+}
+
+.category_artikel {
+    position: relative;
+    display: inline-block;
+    width: 13%;
+}
+
+.category_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00887f13;
+    border: .1vw solid #280D6C;
+    padding: .7vw 1vw;
+    border-radius: .4vw;
+    cursor: pointer;
+    font-size: .9vw;
+    font-weight: 600;
+    color: #280D6C;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.category_button.active {
+    border-radius: .4vw .4vw 0 0;
+    border-bottom: none;
+}
+
+.category_button svg {
+    font-size: 1.1vw;
+    color: #280D6C;
+    margin-left: .5vw;
+}
+
+.dropdown_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: .1vw solid #280D6C;
+    border-radius: .4vw;
+    box-shadow: 0 .2vw .5vw rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: none;
+    z-index: 10;
+    overflow: hidden;
+    width: 100%;
+}
+
+.dropdown_menu.active {
+    display: block;
+    border-radius: 0 0 .4vw .4vw;
+    border-top: none;
+}
+
+.dropdown_menu div {
+    padding: .7vw 1vw;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.dropdown_menu div:hover {
+    background-color: #f0f0f0;
+}
+
+.divider_bottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.4vw;
+    z-index: 2;
+    background: linear-gradient(90deg, #00887E 0%, #009E96 49.5%, #00887E 100%);
+}
+
+.grid_container{
+    width: 100%;
+    padding: 7vw 6vw;
+    position: relative;
+    background: linear-gradient(90deg, #1C0A56 0%, #280D6C 49.5%, #1C0A56 100%);
+}
+.grid_artikel{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1.5vw;
+    
+}

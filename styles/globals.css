@@ -118,6 +118,15 @@ a {
   right: auto;
 }
 
+.swiperArtikelPage .swiper-button-next, .swiperArtikelPage .swiper-rtl .swiper-button-prev {
+  right: 2vw !important;
+  left: auto;
+}
+.swiperArtikelPage .swiper-button-prev, .swiperArtikelPage .swiper-rtl .swiper-button-next {
+  left: 2vw !important;
+  right: auto;
+}
+
 .swiper-button-prev, .swiper-button-next {
   position: absolute;
   top: var(--swiper-navigation-top-offset, 50%);
@@ -208,6 +217,15 @@ a {
 .swiperArtikel{
   padding: 0 11.4vw !important;
 }
+.swiperArtikelPage{
+  padding: 0 8.8vw !important;
+}
+.swiperArtikelAbout .swiper-wrapper{
+  border-radius: 2vw !important;
+}
+.swiperArtikelPage .swiper-wrapper{
+  border-radius: 2vw !important;
+}
 @media (max-width:768px) {
   .swiperArtikel{
     padding: 0 5vw !important;
@@ -228,6 +246,14 @@ a {
   display: inline-block;
   border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
   background: #009E96 !important;
+  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+}
+.swiperArtikelAbout .swiper-pagination-bullet {
+  width: .8vw !important;
+  height: .8vw !important;
+  display: inline-block;
+  border-radius: var(--swiper-pagination-bullet-border-radius, 50%);
+  background: #ffffff !important;
   opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
 }
 
@@ -265,6 +291,25 @@ a {
   align-items: center;
   justify-content: center;
   color: #009E96 !important;
+}
+.swiperArtikelAbout .swiper-button-prev, .swiperArtikelAbout .swiper-button-next {
+  position: absolute;
+  top: var(--swiper-navigation-top-offset, 50%);
+  width: calc(var(--swiper-navigation-size) / 44* 27);
+  height:5.9vw !important;
+  margin-top: calc(0px -(var(--swiper-navigation-size) / 2));
+  background-color: rgba(255, 255, 255, 0.164) !important;
+  backdrop-filter: blur(.4vw) !important; /* Menentukan intensitas blur */
+  -webkit-backdrop-filter: blur(.4vw) !important;
+  border: .11vw solid #ffffff85 !important;
+  padding: 2.4vw !important;
+  border-radius: 1.2vw !important;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
 }
 @media (max-width:768px) {
   .swiper-slide img{
