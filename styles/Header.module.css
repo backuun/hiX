@@ -82,11 +82,29 @@
     font-size: 1.16vw;
     font-weight: 400;
     color: #280D6C;
+    position: relative;
+}
+.header_layout_bottom ul li span{
+    list-style: none;
+    font-size: 1.16vw;
+    font-weight: 400;
+    color: #280D6C;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .2vw;
+}
+.header_layout_bottom ul li span svg{
+    font-size: 1vw;
 }
 .header_layout_bottom ul li.active a {
     color: #009E96; /* Active menu item color */
     font-weight: 600;
 }
+.activeSpan {
+    font-weight: 600 !important;
+    color: #009E96 !important;
+  }
 .search_header{
     margin-left: 1.3vw;
     border-left: .1vw solid white;
@@ -115,6 +133,37 @@
 }
 .close_button{
     display: none;
+}
+.header_layout_bottom ul li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    padding: .45vw 2.7vw;
+    padding-left: 1vw;
+    margin: 0;
+    z-index: 3;
+    border-radius: 1vw;
+    box-shadow: 0px 4px 5.8px 0px #00000040;
+
+}
+.header_layout_bottom ul li ul li {
+    width: max-content;
+    font-size: 1.1vw;
+    margin: .7vw 0;
+}
+
+.header_layout_bottom ul li ul li a {
+    color: #280D6C;
+    text-decoration: none; 
+    display: block; 
+}
+.header_layout_bottom ul li ul li a:hover {
+    color: #009E96;
+}
+.show {
+    display: block !important;
 }
 @media (max-width:768px) {
     .nav{

@@ -5,12 +5,13 @@ import { MdPhone, MdEmail } from "react-icons/md";
 import { LuSearch } from "react-icons/lu";
 import { useRouter } from "next/router";
 import { IoIosMenu } from "react-icons/io";
-import { IoCloseOutline } from "react-icons/io5";
+import { IoCloseOutline, IoChevronDown } from "react-icons/io5";
 import { useState } from "react";
 
 export default function Header() {
     const router = useRouter();
     const [menuActive, setMenuActive] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState(null);
 
     const isActive = (path) => {
         return router.asPath === path ? styles.active : '';
@@ -19,6 +20,26 @@ export default function Header() {
     const handleHamburger = () => {
         setMenuActive(!menuActive);
     }
+
+    const getLinkClass = (href) => {
+        return router.pathname === href ? `${styles.link} ${styles.active}` : styles.link;
+    };
+
+    const isActiveMenu = (subMenuLinks) => {
+        return subMenuLinks.some(link => router.pathname.startsWith(link));
+    };
+
+    const toggleDropdown = (menu) => {
+        setOpenDropdown(openDropdown === menu ? null : menu);
+    };
+
+    const closeDropdown = () => {
+        setOpenDropdown(null);
+    };
+
+    const clickMenu = () => {
+        closeDropdown();
+    };
 
     return(
         <>
@@ -77,7 +98,31 @@ export default function Header() {
                        <li className={isActive('/')}><Link href="/">Beranda</Link></li>
                        <li className={isActive('/lacak-paket')}><Link href="/lacak-paket">Lacak Paket</Link></li>
                        <li className={isActive('/tentang-kami')}><Link href="/tentang-kami">Tentang Kami</Link></li>
-                       <li className={isActive('/layanan')}><Link href="/layanan">Layanan</Link></li>
+                       <li>
+                            <span
+                                className={`${openDropdown === 'layanan' || isActiveMenu(['/layanan/instant', '/layanan/sameday']) ? styles.activeSpan : ''}`}
+                                onClick={() => toggleDropdown('layanan')}
+                            >
+                                Layanan <IoChevronDown />
+                            </span>
+                            <ul className={`${openDropdown === 'layanan' ? styles.show : ''}`}>
+                                <li>
+                                    <Link href="/layanan/instant" legacyBehavior>
+                                        <a className={getLinkClass('/layanan/instant')} onClick={clickMenu}>
+                                            Instant
+                                        </a>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/layanan/sameday" legacyBehavior>
+                                        <a className={getLinkClass('/layanan/sameday')} onClick={clickMenu}>
+                                            Sameday
+                                        </a>
+                                    </Link>
+                                </li>
+                            </ul>
+                        </li>
+
                        <li className={isActive('/artikel')}><Link href="/artikel">Artikel</Link></li>
                        <li className={isActive('/kontak')}><Link href="/kontak">Kontak</Link></li>
                    </ul>
