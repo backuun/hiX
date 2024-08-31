@@ -74,7 +74,7 @@
 }
 .section1_form form button{
     font-size: .91vw;
-    font-weight: 600;
+    font-weight: 600; 
     color: #00887E;
     padding: .82vw 4vw;
     border-radius: 100vw;
@@ -186,4 +186,93 @@
     height: 1.4vw;
     z-index: 2;
     background: linear-gradient(90deg, #00887E 0%, #009E96 49.5%, #00887E 100%);
+}
+
+@media (max-width:768px) {
+  .section1{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .maps{
+    height: 70vw;
+  }
+  .section1_layout{
+    padding: 10vw 9vw;
+  }
+  .section1_form{
+    margin-bottom: 9vw;
+  }
+  .section1_form h1{
+    font-size: 4.8vw;
+    margin-bottom: 2.7vw;
+  }
+  .form_field_double{
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0;
+  }
+  .form_field{
+    gap: 1.4vw;
+    margin-bottom: 3vw;
+  }
+  .form_field label{
+    font-size: 3.6vw;
+  }
+  .form_field input{
+    font-size: 3.9vw;
+    padding: 1.9vw 3.6vw;
+    border-radius: 1.6vw;
+  }
+  .form_field textarea{
+    height: 16vw;
+    font-size: 3.9vw;
+    padding: 1.9vw 3.6vw;
+    border-radius: 1.6vw;
+  }
+  .section1_form form button{
+    font-size: 3.91vw;
+    padding: 1.82vw 4.3vw;
+    border-radius: 100vw;
+  }
+  .customCheckbox {
+    font-size: 3.6vw;
+    margin-bottom: 5vw;
+  }
+  .customCheckmark {
+    width: 3.7vw;
+    height: 3.7vw;
+    border-radius: .8vw;
+    margin-right: 1.9vw;
+  }
+  .customCheckbox .customCheckmark:after {
+    left: 1.16vw;
+    top: .2vw;
+    width: .7vw;
+    height: 1.9vw;
+  }
+  .addressDetail{
+    margin-bottom: 6vw;
+  }
+  .addressDetail h3{
+    font-size: 3.8vw;
+    margin-bottom: 1.8vw;
+  }
+  .addressDetail p{
+    font-size: 3.8vw;
+  }
+  .contact_detail h3{
+    font-size: 3.8vw;
+    margin-bottom: 4vw;
+  }
+  .contact_layout{
+    gap: 3.3vw;
+  }
+  .contact_box{
+    gap: 2.66vw;
+  }
+  .contact_box svg{
+    font-size: 7vw;
+  }
+  .contact_box h5{
+    font-size: 3.5vw;
+  }
 }

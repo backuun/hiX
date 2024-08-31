@@ -41,6 +41,11 @@ export default function Header() {
         closeDropdown();
     };
 
+    const clickMenuDropdown = () => {
+        closeDropdown();
+        handleHamburger();
+    };
+
     return(
         <>
         <div className={styles.nav}>
@@ -77,10 +82,6 @@ export default function Header() {
                                 </div>
                             </Link>
                         </div>
-                        <div className={styles.search_header}>
-                            <input type="text" placeholder="Cari..."/>
-                            <LuSearch/>
-                        </div>
                     </div>
                     <div className={styles.header_content}>
                         <div className={styles.header_contact}>
@@ -94,11 +95,17 @@ export default function Header() {
                     </div>
                 </div>
                 <div className={styles.header_layout_bottom}>
-                   <ul>
-                       <li className={isActive('/')}><Link href="/">Beranda</Link></li>
-                       <li className={isActive('/lacak-paket')}><Link href="/lacak-paket">Lacak Paket</Link></li>
-                       <li className={isActive('/tentang-kami')}><Link href="/tentang-kami">Tentang Kami</Link></li>
-                       <li>
+                    <ul>
+                        <li className={isActive('/')} onClick={clickMenuDropdown}>
+                            <Link href="/">Beranda</Link>
+                        </li>
+                        <li className={isActive('/lacak-paket')} onClick={clickMenuDropdown}>
+                            <Link href="/lacak-paket">Lacak Paket</Link>
+                        </li>
+                        <li className={isActive('/tentang-kami')} onClick={clickMenuDropdown}>
+                            <Link href="/tentang-kami">Tentang Kami</Link>
+                        </li>
+                        <li>
                             <span
                                 className={`${openDropdown === 'layanan' || isActiveMenu(['/layanan/instant', '/layanan/sameday']) ? styles.activeSpan : ''}`}
                                 onClick={() => toggleDropdown('layanan')}
@@ -106,14 +113,14 @@ export default function Header() {
                                 Layanan <IoChevronDown />
                             </span>
                             <ul className={`${openDropdown === 'layanan' ? styles.show : ''}`}>
-                                <li>
+                                <li onClick={clickMenuDropdown}>
                                     <Link href="/layanan/instant" legacyBehavior>
                                         <a className={getLinkClass('/layanan/instant')} onClick={clickMenu}>
                                             Instant
                                         </a>
                                     </Link>
                                 </li>
-                                <li>
+                                <li onClick={clickMenuDropdown}>
                                     <Link href="/layanan/sameday" legacyBehavior>
                                         <a className={getLinkClass('/layanan/sameday')} onClick={clickMenu}>
                                             Sameday
@@ -122,10 +129,13 @@ export default function Header() {
                                 </li>
                             </ul>
                         </li>
-
-                       <li className={isActive('/artikel')}><Link href="/artikel">Artikel</Link></li>
-                       <li className={isActive('/kontak')}><Link href="/kontak">Kontak</Link></li>
-                   </ul>
+                        <li className={isActive('/artikel')} onClick={clickMenuDropdown}>
+                            <Link href="/artikel">Artikel</Link>
+                        </li>
+                        <li className={isActive('/kontak')} onClick={clickMenuDropdown}>
+                            <Link href="/kontak">Kontak</Link>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -6,7 +6,6 @@
     border-radius: 1.7vw;
     overflow: hidden;
     width: 100%;
-    
 }
 .box_artikel span{
     color: white;
@@ -47,6 +46,11 @@
     font-weight: 600;
     color: white;
     margin-top: .68vw;
+    display: -webkit-box;            /* Flexbox untuk multi-line truncation */
+    -webkit-box-orient: vertical;    /* Orientasi box secara vertikal */
+    -webkit-line-clamp: 2;           /* Batasan pada 2 baris */
+    overflow: hidden;                /* Sembunyikan teks yang berlebih */
+    text-overflow: ellipsis; 
     margin-bottom: .8vw;
 }
 .content_artikel_grid h2{
@@ -203,6 +207,187 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1.5vw;
-    
+    grid-gap: 1.5vw;   
+}
+
+.blog_detail_container{
+    width: 100%;
+    padding: 2vw 0;
+    padding-bottom: 3.4vw;
+    background-image: url(../public/images/section3_bg.png), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 158, 150, 0.212) 100%);
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.blog_detail_container_layout{
+    width: 68%;
+    display: block;
+    margin: auto;
+}
+.blog_detail_image{
+    width: 100%;
+    height: 33vw;
+    border-radius: 1.7vw;
+    position: relative;
+    overflow: hidden;
+}
+.blog_detail_image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.blog_detail_meta{
+    padding: 2vw 0;
+    padding-bottom: 1.3vw;
+}
+.blog_detail_meta_layout{
+    display: flex;
+    gap: 1vw;
+    margin-bottom: 1vw;
+}
+.blog_detail_meta_box{
+    display: flex;
+    align-items: center;
+    gap: .3vw;
+}
+.blog_detail_meta_box svg{
+    font-size: .8vw;
+    color: #009E96;
+}
+.blog_detail_meta_box span{
+    font-size: .9vw;
+    color: #1C0A56;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.blog_detail_meta h1{
+    font-size: 2vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #009E96;
+}
+.blog_detail_content p{
+    font-size: .9vw;
+    color: #1C0A56;
+    margin-bottom: 1vw;
+}
+.blog_detail_content h1, .blog_detail_content h2, .blog_detail_content h3, .blog_detail_content h4, .blog_detail_content h5, .blog_detail_content h6{
+    color: #009E96;
+    font-size: 1vw;
+    font-weight: 700;
+    margin-bottom: .5vw;
+}
+
+@media (max-width:768px) {
+    .container_artikel{
+        padding: 8vw 4vw;
+        padding-top: 6vw;
+    }
+    .heading_artikel{
+        padding: 0 8.8vw;
+        flex-direction: column;
+        gap: 5vw;
+        margin-bottom: 7vw;
+        margin-top: 2vw;
+    }
+    .heading_artikel h1{
+        font-size: 4.5vw;
+    }
+    .heading_artikel_grid{
+        text-align: center;
+        margin-bottom: 6vw;
+    }
+    .heading_artikel_grid h1{
+        font-size: 4.5vw;
+    }
+
+    .category_artikel {
+        position: relative;
+        display: inline-block;
+        width: 30vw;
+    }
+    .category_button {
+        display: flex;
+        gap: 1.3vw;
+        border: .1vw solid #280D6C;
+        padding: 1.8vw 2.6vw;
+        border-radius: 2vw;
+        font-size: 3.5vw;
+    }
+    .category_button.active {
+        border-radius:2vw 2vw 0 0;
+        border-bottom: none;
+    }
+    .dropdown_menu {
+        border-radius: 2vw;
+        font-size: 3.5vw;
+    }
+    .dropdown_menu.active {
+        display: block;
+        border-radius: 0 0 2vw 2vw;
+        border-top: none;
+    }
+    .category_button svg {
+        font-size: 3.8vw;
+        margin-left: .5vw;
+    }
+    .dropdown_menu div {
+        padding: 1.8vw 2.6vw;
+        width: max-content;
+    }
+    .box_artikel{
+        border-radius: 3vw;
+    }
+    .image_artikel{
+        height: 44vw;
+    }
+    .content_artikel{
+        padding: 4vw;
+        padding-top: 4vw;
+    }
+    .content_artikel span{
+        font-size: 3vw;
+    }
+    .content_artikel h2{
+        font-size: 4.5vw;
+        margin-top: 1.7vw;
+        margin-bottom: 2.8vw;
+        display: -webkit-box;            /* Flexbox untuk multi-line truncation */
+        -webkit-box-orient: vertical;    /* Orientasi box secara vertikal */
+        -webkit-line-clamp: 2;           /* Batasan pada 2 baris */
+        overflow: hidden;                /* Sembunyikan teks yang berlebih */
+        text-overflow: ellipsis; 
+    }
+    .content_artikel p{
+        font-size: 3.1vw;
+        padding-right: 4vw;
+    }
+    .content_artikel button{
+        margin-top: 6.8vw;
+        font-size: 3.4vw;
+        padding: 2.1vw 4vw;
+        border-radius: 1.6vw;
+    }
+
+    .grid_container{
+        padding: 12vw 0vw;
+    }
+    .grid_artikel_container{
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .grid_artikel{
+        width: max-content;
+        display: flex;
+        gap: 4vw;
+        padding: 0 7vw;
+    }
+    .grid_artikel .box_artikel{
+        width: 58vw;
+    }
 }

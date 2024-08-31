@@ -4,6 +4,7 @@ import styles from '@/styles/Blog.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FiChevronDown } from "react-icons/fi";
 import { useState } from 'react';
+import Head from 'next/head';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -17,7 +18,7 @@ export default function Blog(){
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState('Semua');
 
-    const toggleDropdown = () => {
+    const toggleDropdown = () => { 
         setIsDropdownOpen(!isDropdownOpen);
     };
 
@@ -28,8 +29,12 @@ export default function Blog(){
 
     return(
         <>
+            <Head>
+                <title>HiX | Artikel</title>
+                <meta name="description" content="Solusi Pengiriman yang cepat & Tepat" /> 
+            </Head>
             <div className={banner.banner}>
-                <img src='images/banner_tentang_kami.png' alt='Lacak Paket HiXpress'/>
+                <img src='images/artikel_banner.png' alt='Lacak Paket HiXpress'/>
             </div>
             <div className={banner.breadcumbs}>
                 <p><Link href='/'>Beranda</Link> / <span>Artikel</span></p>
@@ -60,9 +65,9 @@ export default function Blog(){
                         spaceBetween={16}
                         loop={true}
                         navigation={true}
-                        // pagination={{
-                        // clickable: true,
-                        // }}
+                        pagination={{
+                        clickable: true,
+                        }}
                         breakpoints={{
                         640: {
                             slidesPerView: 2, 
@@ -89,7 +94,7 @@ export default function Blog(){
                             <span>Diposting 24/07/2024</span>
                             <h2>Lorem Ipsum Dolor</h2>
                             <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
-                            <Link href="#"><button>Baca Selengkapnya</button></Link>
+                            <Link href="artikel/1"><button>Baca Selengkapnya</button></Link>
                             </div>
                         </div>
                         </SwiperSlide>
@@ -102,7 +107,7 @@ export default function Blog(){
                             <span>Diposting 24/07/2024</span>
                             <h2>Lorem Ipsum Dolor</h2>
                             <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
-                            <Link href="#"><button>Baca Selengkapnya</button></Link>
+                            <Link href="artikel/1"><button>Baca Selengkapnya</button></Link>
                             </div>
                         </div>
                         </SwiperSlide>
@@ -115,7 +120,7 @@ export default function Blog(){
                             <span>Diposting 24/07/2024</span>
                             <h2>Lorem Ipsum Dolor</h2>
                             <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
-                            <Link href="#"><button>Baca Selengkapnya</button></Link>
+                            <Link href="artikel/1"><button>Baca Selengkapnya</button></Link>
                             </div>
                         </div>
                         </SwiperSlide>
@@ -128,7 +133,7 @@ export default function Blog(){
                             <span>Diposting 24/07/2024</span>
                             <h2>Lorem Ipsum Dolor</h2>
                             <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
-                            <Link href="#"><button>Baca Selengkapnya</button></Link>
+                            <Link href="artikel/2"><button>Baca Selengkapnya</button></Link>
                             </div>
                         </div>
                         </SwiperSlide>
@@ -140,49 +145,51 @@ export default function Blog(){
                 <div className={styles.heading_artikel_grid}>
                     <h1>Artikel Lainnya</h1>
                 </div>
-                <div className={styles.grid_artikel}>
-                    <div className={styles.box_artikel}>
-                        <div className={styles.image_artikel}>
-                            <img src="images/artikel_image.png" alt="HiXpress"/>
+                <div className={styles.grid_artikel_container}>
+                    <div className={styles.grid_artikel}>
+                        <div className={styles.box_artikel}>
+                            <div className={styles.image_artikel}>
+                                <img src="images/artikel_image.png" alt="HiXpress"/>
+                            </div>
+                            <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
+                                <span>Diposting 24/07/2024</span>
+                                <h2>Lorem Ipsum Dolor</h2>
+                                <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
+                                <Link href="#"><button>Baca Selengkapnya</button></Link>
+                            </div>
                         </div>
-                        <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
-                            <span>Diposting 24/07/2024</span>
-                            <h2>Lorem Ipsum Dolor</h2>
-                            <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
-                            <Link href="#"><button>Baca Selengkapnya</button></Link>
+                        <div className={styles.box_artikel}>
+                            <div className={styles.image_artikel}>
+                                <img src="images/artikel_image.png" alt="HiXpress"/>
+                            </div>
+                            <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
+                                <span>Diposting 24/07/2024</span>
+                                <h2>Lorem Ipsum Dolor</h2>
+                                <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
+                                <Link href="/artikel/1"><button>Baca Selengkapnya</button></Link>
+                            </div>
                         </div>
-                    </div>
-                    <div className={styles.box_artikel}>
-                        <div className={styles.image_artikel}>
-                            <img src="images/artikel_image.png" alt="HiXpress"/>
+                        <div className={styles.box_artikel}>
+                            <div className={styles.image_artikel}>
+                                <img src="images/artikel_image.png" alt="HiXpress"/>
+                            </div>
+                            <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
+                                <span>Diposting 24/07/2024</span>
+                                <h2>Lorem Ipsum Dolor</h2>
+                                <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
+                                <Link href="#"><button>Baca Selengkapnya</button></Link>
+                            </div>
                         </div>
-                        <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
-                            <span>Diposting 24/07/2024</span>
-                            <h2>Lorem Ipsum Dolor</h2>
-                            <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
-                            <Link href="#"><button>Baca Selengkapnya</button></Link>
-                        </div>
-                    </div>
-                    <div className={styles.box_artikel}>
-                        <div className={styles.image_artikel}>
-                            <img src="images/artikel_image.png" alt="HiXpress"/>
-                        </div>
-                        <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
-                            <span>Diposting 24/07/2024</span>
-                            <h2>Lorem Ipsum Dolor</h2>
-                            <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
-                            <Link href="#"><button>Baca Selengkapnya</button></Link>
-                        </div>
-                    </div>
-                    <div className={styles.box_artikel}>
-                        <div className={styles.image_artikel}>
-                            <img src="images/artikel_image.png" alt="HiXpress"/>
-                        </div>
-                        <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
-                            <span>Diposting 24/07/2024</span>
-                            <h2>Lorem Ipsum Dolor</h2>
-                            <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
-                            <Link href="#"><button>Baca Selengkapnya</button></Link>
+                        <div className={styles.box_artikel}>
+                            <div className={styles.image_artikel}>
+                                <img src="images/artikel_image.png" alt="HiXpress"/>
+                            </div>
+                            <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
+                                <span>Diposting 24/07/2024</span>
+                                <h2>Lorem Ipsum Dolor</h2>
+                                <p>Dengan layanan Sameday dan Instant Delivery, H! Express menjamin paket Anda tiba dengan cepat dan tepat waktu.</p>
+                                <Link href="#"><button>Baca Selengkapnya</button></Link>
+                            </div>
                         </div>
                     </div>
                 </div>

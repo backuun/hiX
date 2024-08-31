@@ -193,6 +193,7 @@
 .shipping_status_process{
     width: 100%;
     padding: .7vw 0;
+    padding-right: 3vw;
     padding-bottom: 0vw;
     border-left: .12vw solid #009E96;
     margin: 0 2vw;
@@ -241,7 +242,7 @@
 }
 .user_shipping_data h1{
     text-transform: uppercase;
-    font-size: 1.9vw;
+    font-size: 1.4vw;
     margin-top: .3vw;
     color: #1A0353;
 }
@@ -310,6 +311,7 @@
         font-size: 3.5vw;
         padding: 2.5vw 4.6vw;
     }
+    
     .popup_box{
         width: 100%;
         height: 100vh;

@@ -243,6 +243,49 @@
         width: 100%;
         padding: 4.4vw 0;
     }
+    .header_layout_bottom ul li span{
+        font-size: 4.5vw;
+        padding: 4.4vw 0;
+        color: white;
+        gap: .2vw;
+    }
+    .header_layout_bottom ul li span svg{
+        font-size: 3.6vw;
+    }
+    .header_layout_bottom ul li ul {
+        display: none;
+        position: relative;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        padding: 0 0;
+        padding-left: 0;
+        margin: 0;
+        z-index: 3;
+        border-radius: 1vw;
+        box-shadow: 0px 4px 5.8px 0px #00000040;
+    
+    }
+    .header_layout_bottom ul li ul li {
+        width: 100%;
+        font-size: 4.5vw;
+        margin: 0vw 0;
+    }
+    
+    .header_layout_bottom ul li ul li a {
+        color: #280D6C;
+        text-decoration: none; 
+        display: block; 
+        border-bottom: .1vw solid #009E96;
+        width: 100%;
+        padding: 4vw 3vw;
+    }
+    .header_layout_bottom ul li ul li:last-child a{
+        border: none;
+    }
+    .header_layout_bottom ul li ul li a:hover {
+        color: #009E96;
+    }
     .close_button{
         display: block;
         position: absolute;

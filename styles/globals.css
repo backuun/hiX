@@ -80,6 +80,9 @@
   padding: 0;
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
 }
 
 html,
@@ -125,6 +128,9 @@ a {
 .swiperArtikelPage .swiper-button-prev, .swiperArtikelPage .swiper-rtl .swiper-button-next {
   left: 2vw !important;
   right: auto;
+}
+.swiperArtikelPage .swiper-pagination{
+  display: none !important;
 }
 
 .swiper-button-prev, .swiper-button-next {
@@ -184,6 +190,9 @@ a {
 @media (max-width:768px) {
   .swiperPartner .swiper-wrapper{
     padding-bottom: 12vw !important;
+  }
+  .swiperArtikelPage .swiper-pagination{
+    display: block !important;
   }
 }
 
