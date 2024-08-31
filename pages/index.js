@@ -4,8 +4,15 @@ import Slide from "./components/slide";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";
 import React, { useRef, useState } from 'react';
+import { FaPaperPlane } from "react-icons/fa";
+import { FaInbox } from "react-icons/fa";
+import { FaTruck } from "react-icons/fa";
+import { FaHistory } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { BsArrowLeft } from "react-icons/bs";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import axios from "axios";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,6 +22,26 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 
 export default function Home() {
+  const [isActive, setIsActive] = useState(false);
+    const [noResi, setNoResi] = useState('');
+    const [trackingData, setTrackingData] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+  
+    const togglePopup = async () => {
+        if (!noResi) return;
+    
+        setIsLoading(true); // Set isLoading menjadi true saat permintaan API dimulai
+        try {
+          const response = await axios.get(`/api/lacak?noResi=${noResi}`);
+          setTrackingData(response.data);
+          setIsActive(true);
+        } catch (error) {
+          console.error('Error fetching tracking data:', error);
+        } finally {
+          setIsLoading(false); // Set isLoading menjadi false setelah permintaan API selesai
+        }
+      };
+
   return (
     <>
       <Head>
@@ -103,17 +130,127 @@ export default function Home() {
         <div className={styles.section5_content}>
           <span>Lacak Pengiriman</span>
           <h1>Lacak pengiriman paket anda dengan mudah</h1>
-          <div className={styles.searchResi}>
-            <input type="text" placeholder="Masukkan nomor resi"/>
-            <CiSearch />
-          </div>
-          <button>Lacak Sekarang</button>
+          <form onSubmit={(e) => e.preventDefault()}>
+            <div className={styles.searchResi}>
+              <input type='text' placeholder="Masukkan nomor resi" value={noResi} onChange={(e) => setNoResi(e.target.value)} />
+              <CiSearch />
+            </div>
+          </form>
+          <button type="button" onClick={togglePopup} disabled={isLoading}>
+              {isLoading ? 'Memuat...' : 'Lacak Sekarang'}
+          </button>
           <img src="images/box_icon.png" alt="HiXpress" className={styles.box_icon}/>
         </div>
         <div className={styles.section5_image}>
           <img src="images/lacak_image.png" alt="HiXpress"/>
         </div>
       </div>
+      {isActive && trackingData && (
+        <div className={`${styles.popup_lacak} ${styles.active}`}>
+          <div className={styles.overlay} onClick={() => setIsActive(false)}></div>
+          <div className={styles.popup_box}>
+            <div className={styles.popup_menu}>
+              <BsArrowLeft onClick={() => setIsActive(false)} />
+              <h3>Lacak Pengiriman</h3>
+            </div>
+            <div className={styles.popup_heading}>
+              <FaPaperPlane />
+              <h3>{noResi}</h3>
+            </div>
+            <div className={styles.from_to}>
+              <div className={styles.from_to_icon}>
+                <FaInbox />
+                <span>From</span>
+              </div>
+              <div className={styles.from_to_address}>
+                <h3>{trackingData.pengirim.cabang}</h3>
+              </div>
+            </div>
+            <div className={styles.from_to}>
+              <div className={styles.from_to_icon}>
+                <FaTruck />
+                <span>To</span>
+              </div>
+              <div className={styles.from_to_address}>
+                <h3>{trackingData.penerima.alamat}</h3>
+              </div>
+            </div>
+            <div className={styles.shipping_status}>
+              <div className={styles.popup_heading}>
+                <FaHistory />
+                <h3>Status Pengiriman</h3>
+              </div>
+              <div className={styles.shipping_status_process}>
+                {trackingData.logs.map((log, index) => (
+                  <div key={index} className={styles.shipping_status_box}>
+                    <h5>{log.keterangan}</h5>
+                    <span>{`${log.tanggal} - ${log.jam}`}</span>
+                  </div>
+                ))}
+              </div>
+              <div className={styles.user_shipping}>
+                <FaUser />
+                <div className={styles.user_shipping_data}>
+                  <span>Nama Penerima</span>
+                  <h1>{trackingData.penerima.nama}</h1>
+                </div>
+              </div>
+            </div>
+            <div className={styles.shipping_status}>
+              <div className={styles.popup_heading}>
+                <FaInbox />
+                <h3>Shipment Detail</h3>
+              </div>
+              <div className={styles.user_shipping}>
+                <div className={styles.user_shipping_data}>
+                  <span>Deskripsi Barang</span>
+                  <h3>{trackingData.pengirim.merchant}</h3>
+                </div>
+              </div>
+            </div>
+            <div className={styles.shipping_status}>
+              <div className={styles.popup_heading}>
+                <FaUser />
+                <h3>Shipper Information</h3>
+              </div>
+              <div className={styles.flex_column_gap}>
+                <div className={styles.user_shipping}>
+                  <div className={styles.user_shipping_data}>
+                    <span>Nama Pengirim</span>
+                    <h3>{trackingData.pengirim.merchant}</h3>
+                  </div>
+                </div>
+                <div className={styles.user_shipping}>
+                  <div className={styles.user_shipping_data}>
+                    <span>Kota Pengirim</span>
+                    <h3>{trackingData.pengirim.alamat}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={styles.shipping_status}>
+              <div className={styles.popup_heading}>
+                <FaUser />
+                <h3>Informasi Penerima</h3>
+              </div>
+              <div className={styles.flex_column_gap}>
+                <div className={styles.user_shipping}>
+                  <div className={styles.user_shipping_data}>
+                    <span>Nama Penerima</span>
+                    <h3>{trackingData.penerima.nama}</h3>
+                  </div>
+                </div>
+                <div className={styles.user_shipping}>
+                  <div className={styles.user_shipping_data}>
+                    <span>Kota Penerima</span>
+                    <h3>{trackingData.penerima.alamat}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className={styles.section6}>
         <img src="images/img_left.png" alt="HiXpress" className={styles.img_left} />
         <img src="images/img_right.png" alt="HiXpress" className={styles.img_right} />

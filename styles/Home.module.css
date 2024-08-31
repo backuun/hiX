@@ -485,7 +485,306 @@
     border-radius: .6vw;
 }
 
+.popup_lacak{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: none;
+}
+.popup_lacak.active{
+    display: flex;
+}
+.overlay{
+    background: #0000008A;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.popup_box{
+    width: 30%;
+    height: 90vh;
+    background-image: url(../public/images/papper_bg.png);
+    background-position: center;
+    background-size: cover;
+    z-index: 2;
+    border-radius: .86vw;
+    padding: 1.2vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.popup_box::-webkit-scrollbar {
+    width: 10px;
+    display: block;
+  }
+  
+  /* Track */
+.popup_box::-webkit-scrollbar-track {
+    background: #e4e4e4; 
+  }
+   
+  /* Handle */
+.popup_box::-webkit-scrollbar-thumb {
+    background: #280D6C; 
+  }
+.popup_heading{
+    display: flex;
+    justify-content: flex-start;
+    gap: .6vw;
+    align-items: center;
+    background-color: #009E96;
+    border-radius: .6vw;
+    padding: .77vw 1vw;
+    margin-bottom: 1.1vw;
+}
+.popup_heading svg{
+    color: white;
+    font-size: 1.2vw;
+}
+.popup_heading h3{
+    font-size: 1.2vw;
+    color: white;
+    font-weight: 600;
+}
+
+.from_to{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 23% 77%;
+    background-color: #280d6c10;
+    border-radius: .6vw;
+    overflow: hidden;
+    margin-bottom: 1.1vw;
+}
+.from_to_icon{
+    background-color: #280D6C;
+    padding: .9vw 1vw;
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    gap: .7vw;
+}
+.from_to_icon svg{
+    font-size: 1.2vw;
+}
+.from_to_icon span{
+    font-size: .9vw;
+}
+.from_to_address{
+    padding: .9vw 1vw;
+}
+.from_to_address h3{
+    font-size: 1vw;
+    color: #1A0353;
+}
+
+.shipping_status{
+    margin-top: 2.7vw;
+}
+.shipping_status_process{
+    width: 100%;
+    padding: .7vw 0;
+    padding-right: 3vw;
+    padding-bottom: 0vw;
+    border-left: .12vw solid #009E96;
+    margin: 0 2vw;
+}
+.shipping_status_box{
+    position: relative;
+    padding-left: 1.1vw;
+    margin-bottom: 1.1vw;
+}
+.shipping_status_box::before{
+    position: absolute;
+    left: -.57vw;
+    top: .13vw;
+    width: .5vw;
+    height: .5vw;
+    border-radius: 100vw;
+    border: .3vw solid #009E96;
+    background-color: white;
+    content: '';
+}
+.shipping_status_box h5{
+    text-transform: uppercase;
+    font-size: .86vw;
+    color: #280D6C;
+}
+.shipping_status_box span{
+    font-style: italic;
+    font-size: .75vw;
+    font-weight: 500;
+    color: #009E96;
+}
+
+.user_shipping{
+    padding: 0 1.55vw;
+    display: flex;
+    gap: .6vw;
+}
+.user_shipping svg{
+    font-size: .9vw;
+    color: #009E96;
+}
+.user_shipping_data span{
+    font-size: .86vw;
+    font-weight: 600;
+    color: #009E96;
+}
+.user_shipping_data h1{
+    text-transform: uppercase;
+    font-size: 1.4vw;
+    margin-top: .3vw;
+    color: #1A0353;
+}
+.user_shipping_data h3{
+    text-transform: uppercase;
+    font-size: 1.1vw;
+    margin-top: .5vw;
+    color: #1A0353;
+}
+.flex_column_gap{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.popup_menu{
+    display: none;
+}
+
 @media (max-width:768px) {
+    .popup_box{
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        padding: 0;
+        padding-bottom: 4vw;
+    }
+    .popup_box::-webkit-scrollbar {
+        display: none;
+    }
+    .popup_menu{
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: white;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        padding: 3.7vw;
+        gap: 3vw;
+        border-bottom: .1vw solid #280D6C;
+        margin-bottom: 3vw;
+    }
+    .popup_menu svg{
+        font-size: 4.5vw;
+        color: #009E96;
+    }
+    .popup_menu h3{
+        font-size: 3.8vw;
+        color: #1A0353;
+    }
+    .popup_heading{
+        gap: 2vw;
+        border-radius: 2vw;
+        padding: 2.7vw 3.7vw;
+        margin: 3.7vw;
+        margin-bottom: 4vw;
+    }
+    .popup_heading svg{
+        font-size: 4.3vw;
+    }
+    .popup_heading h3{
+        font-size: 4vw;
+    }
+
+    .from_to{
+        width: 90%;
+        display: grid;
+        grid-template-columns: 23% 77%;
+        background-color: #280d6c10;
+        border-radius: 2vw;
+        overflow: hidden;
+        margin: auto;
+        margin-bottom:3.4vw;
+    }
+    .from_to_icon{
+        padding: 3vw 1vw;
+        gap: 1.7vw;
+    }
+    .from_to_icon svg{
+        font-size: 4vw;
+    }
+    .from_to_icon span{
+        font-size: 3.5vw;
+    }
+    .from_to_address{
+        padding: 3vw 4vw;
+    }
+    .from_to_address h3{
+        font-size: 3.7vw;
+    }
+
+    .shipping_status{
+        margin-top: 8vw;
+    }
+    .shipping_status_process{
+        padding: 1.4vw 0;
+        padding-bottom: 0;
+        border-left: .7vw solid #009E96;
+        width: 80%;
+        margin: auto;
+    }
+    .shipping_status_box{
+        padding-left: 5vw;
+        margin-bottom: 5vw;
+    }
+    .shipping_status_box h5{
+        font-size: 3.7vw;
+    }
+    .shipping_status_box span{
+        font-size: 3.1vw;
+    }
+    .shipping_status_box::before{
+        left: -1.87vw;
+        top: .13vw;
+        width: 1.8vw;
+        height: 1.8vw;
+        border: 1vw solid #009E96;
+    }
+
+    .user_shipping{
+        padding: 0 0;
+        width: 83%;
+        margin: auto;
+        display: flex;
+        gap: 2.6vw;
+    }
+    .user_shipping svg{
+        font-size: 4.3vw;
+    }
+    .user_shipping_data span{
+        font-size: 3.5vw;
+    }
+    .user_shipping_data h1{
+        font-size: 7vw;
+        margin-top: 2vw;
+    }
+    .user_shipping_data h3{
+        font-size: 4.1vw;
+        margin-top: 3vw;
+    }
+    
     .section2{
         grid-template-columns: repeat(1, 1fr);
         margin-top: -1.3vw;

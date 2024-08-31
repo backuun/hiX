@@ -2,6 +2,7 @@ import banner from '@/styles/Banner.module.css'
 import Link from 'next/link'
 import styles from '@/styles/About.module.css'
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Head from 'next/head';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -14,6 +15,10 @@ import { Navigation, Pagination } from 'swiper/modules';
 export default function About(){
     return(
         <>
+            <Head>
+                <title>HiX | Tentang Kami</title>
+                <meta name="description" content="Solusi Pengiriman yang cepat & Tepat" /> 
+            </Head>
             <div className={banner.banner}>
                 <img src='images/banner_tentang_kami.png' alt='Lacak Paket HiXpress'/>
             </div>
