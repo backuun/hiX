@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { IoIosMenu } from "react-icons/io";
 import { IoCloseOutline, IoChevronDown } from "react-icons/io5";
 import { useState } from "react";
+import Head from "next/head";
 
 export default function Header() {
     const router = useRouter();
