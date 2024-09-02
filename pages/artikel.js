@@ -6,6 +6,8 @@ import { FiChevronDown } from "react-icons/fi";
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import axios from 'axios';
+import Skeleton from 'react-loading-skeleton'; // Import Skeleton
+import 'react-loading-skeleton/dist/skeleton.css'; // Import Skeleton CSS
 
 // Import Swiper styles
 import 'swiper/css';
@@ -83,6 +85,8 @@ export default function Blog(){
                     console.log('Fetched and filtered articles:', sortedArticles);
                 } catch (error) {
                     console.error('Error fetching articles:', error);
+                } finally {
+                    setIsLoading(false);
                 }
             };
     
@@ -147,49 +151,94 @@ export default function Blog(){
                     </div>
                 </div>
                 <div className={styles.artikel_slide}>
-                {items.length > 0 && (
-                    <Swiper
-                        cssMode={true}
-                        slidesPerView={1}
-                        spaceBetween={16}
-                        loop={true}
-                        navigation={true}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        breakpoints={{
-                            640: {
-                                slidesPerView: 2, 
-                                spaceBetween: 20,
-                            },
-                            768: {
-                                slidesPerView: 2,
-                                spaceBetween: 20,
-                            },
-                            1024: {
-                                slidesPerView: 2,
-                                spaceBetween: 40,
-                            },
-                        }}
-                        modules={[Pagination, Navigation]}
-                        className="swiperArtikel swiperArtikelPage"
-                    >
-                        {items.map((item) => (
-                            <SwiperSlide key={item.id}>
-                                <div className={styles.box_artikel}>
-                                    <div className={styles.image_artikel}>
-                                        <img src={`https://prahwa.net/storage/${item.image}`} alt={item.title} />
+                    {isLoading ? (
+                        <Swiper
+                            cssMode={true}
+                            slidesPerView={1}
+                            spaceBetween={16}
+                            loop={true}
+                            navigation={true}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                1024: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 40,
+                                },
+                            }}
+                            modules={[Pagination, Navigation]}
+                            className="swiperArtikel swiperArtikelPage"
+                        >
+                            {/* Skeleton loader */}
+                            {[...Array(3)].map((_, index) => (
+                                <SwiperSlide key={index}>
+                                    <div className={styles.box_artikel}>
+                                        <div className={styles.image_artikel}>
+                                            <Skeleton className='skeleton-cover' width="100%" />
+                                        </div>
+                                        <div className={styles.content_artikel}>
+                                            <Skeleton height={20} width="60%" style={{ marginBottom: 10 }} />
+                                            <Skeleton count={2} height={15} width="80%" />
+                                            <Skeleton height={30} width="40%" />
+                                        </div>
                                     </div>
-                                    <div className={styles.content_artikel}>
-                                        {item.date && <span>Diposting {formatDate(item.date)}</span>}
-                                        <h2>{stripH1Tags(item.title)}</h2>
-                                        <p>{stripH1Tags(item.text)}</p>
-                                        <Link href="artikel/1"><button>Baca Selengkapnya</button></Link>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    ) : (
+                        items.length > 0 && (
+                            <Swiper
+                                cssMode={true}
+                                slidesPerView={1}
+                                spaceBetween={16}
+                                loop={true}
+                                navigation={true}
+                                pagination={{
+                                    clickable: true,
+                                }}
+                                breakpoints={{
+                                    640: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 20,
+                                    },
+                                    768: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 20,
+                                    },
+                                    1024: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 40,
+                                    },
+                                }}
+                                modules={[Pagination, Navigation]}
+                                className="swiperArtikel swiperArtikelPage"
+                            >
+                                {items.map((item) => (
+                                    <SwiperSlide key={item.id}>
+                                        <div className={styles.box_artikel}>
+                                            <div className={styles.image_artikel}>
+                                                <img src={`https://prahwa.net/storage/${item.image}`} alt={item.title} />
+                                            </div>
+                                            <div className={styles.content_artikel}>
+                                                {item.date && <span>Diposting {formatDate(item.date)}</span>}
+                                                <h2>{stripH1Tags(item.title)}</h2>
+                                                <p>{stripH1Tags(item.text)}</p>
+                                                <Link href={`/artikel/${item.id}`}><button>Baca Selengkapnya</button></Link>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        )
                     )}
                 </div>
             </div>
@@ -200,19 +249,34 @@ export default function Blog(){
                 </div>
                 <div className={styles.grid_artikel_container}>
                     <div className={styles.grid_artikel}>
-                        {articles.map((article) => (
-                            <div className={styles.box_artikel} key={article.id}>
+                        {isLoading ? (
+                            Array.from({ length: 4 }).map((_, index) => (
+                                <div className={styles.box_artikel} key={index}>
                                 <div className={styles.image_artikel}>
-                                    <img src={`https://prahwa.net/storage/${article.image}`} alt={article.title} />
+                                    <Skeleton height={150} width="100%" />
                                 </div>
                                 <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
-                                    {article.date && <span>Diposting {formatDate(article.date)}</span>}
-                                    <h2>{stripH1Tags(article.title)}</h2>
-                                    <p>{stripH1Tags(article.text)}</p>
-                                    <Link href="artikel/1"><button>Baca Selengkapnya</button></Link>
+                                    <Skeleton height={20} width="70%" />
+                                    <Skeleton height={15} width="50%" />
+                                    <Skeleton count={3} height={10} />
+                                    <Skeleton height={30} width="30%" />
                                 </div>
-                            </div>
-                        ))}
+                                </div>
+                            ))
+                        ) : (
+                            articles.map((article) => (
+                                <div className={styles.box_artikel} key={article.id}>
+                                    <div className={styles.image_artikel}>
+                                        <img src={`https://prahwa.net/storage/${article.image}`} alt={article.title} />
+                                    </div>
+                                    <div className={`${styles.content_artikel} ${styles.content_artikel_grid}`}>
+                                        {article.date && <span>Diposting {formatDate(article.date)}</span>}
+                                        <h2>{stripH1Tags(article.title)}</h2>
+                                        <p>{stripH1Tags(article.text)}</p>
+                                        <Link href={`/artikel/${article.id}`}><button>Baca Selengkapnya</button></Link>
+                                    </div>
+                                </div>
+                            )))}
                     </div>
                 </div>
             </div>

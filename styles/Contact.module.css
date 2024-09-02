@@ -177,6 +177,13 @@
     bottom: 5vw;
   }
 
+  .notifPost{
+    text-align: start;
+    color: white;
+    font-size: 1vw;
+    margin-top: 1.4vw;
+  }
+
 
 .divider_bottom{
     position: absolute;
@@ -189,6 +196,12 @@
 }
 
 @media (max-width:768px) {
+  .notifPost{
+    text-align: start;
+    color: white;
+    font-size: 3.8vw;
+    margin-top: 4.4vw;
+  }
   .section1{
     display: flex;
     flex-direction: column-reverse;
