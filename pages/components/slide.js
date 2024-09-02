@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -11,6 +11,22 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 
 export default function Slide() {
+  const [banners, setBanners] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+        const response = await fetch(`/api/banner`);
+        const data = await response.json();
+        if (data && data.data) {
+          setBanners(data.data);
+        } else {
+          console.error('Invalid response data format:', data);
+        }
+    };
+  
+    fetchData();
+  }, []);
+
   return (
     <>
       <Swiper
@@ -25,15 +41,11 @@ export default function Slide() {
         modules={[Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
-        <SwiperSlide>
-            <img src='images/banner.png' alt='Hixpress Banner' />
-        </SwiperSlide>
-        <SwiperSlide>
-            <img src='images/banner.png' alt='Hixpress Banner' />
-        </SwiperSlide>
-        <SwiperSlide>
-            <img src='images/banner.png' alt='Hixpress Banner' />
-        </SwiperSlide>
+        {banners.map((banner) => (
+          <SwiperSlide>
+              <img src={`https://prahwa.net/storage/${banner.image}`} alt='Hixpress Banner' />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   );

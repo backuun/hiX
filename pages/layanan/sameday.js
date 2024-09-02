@@ -2,6 +2,7 @@ import banner from '@/styles/Banner.module.css'
 import styles from '@/styles/Layanan.module.css'
 import Link from 'next/link'
 import Head from 'next/head'
+import Comingsoon from '../components/comingsoon'
 
 export default function Sameday(){
     return(
@@ -16,6 +17,7 @@ export default function Sameday(){
             <div className={banner.breadcumbs}>
                 <p><Link href='/'>Beranda</Link> / Layanan / <span>Sameday</span></p>
             </div>
+            <Comingsoon/>
         </>
     )
 }

@@ -65,6 +65,11 @@
     color: white;
     font-size: 1.06vw;
     padding-right: 4vw;
+    display: -webkit-box;            /* Flexbox untuk multi-line truncation */
+    -webkit-box-orient: vertical;    /* Orientasi box secara vertikal */
+    -webkit-line-clamp: 3;           /* Batasan pada 2 baris */
+    overflow: hidden;                /* Sembunyikan teks yang berlebih */
+    text-overflow: ellipsis; 
 }
 .content_artikel_grid p{
     font-size: .9vw;
@@ -161,28 +166,36 @@
     left: 0;
     background-color: white;
     border: .1vw solid #280D6C;
-    border-radius: .4vw;
+    border-radius: 0 0 .4vw .4vw;
     box-shadow: 0 .2vw .5vw rgba(0, 0, 0, 0.1);
     z-index: 1;
-    display: none;
     z-index: 10;
     overflow: hidden;
+    border-top: none;
     width: 100%;
 }
 
-.dropdown_menu.active {
-    display: block;
+.category_button.active .dropdown_menu{
+    display: block !important;
     border-radius: 0 0 .4vw .4vw;
     border-top: none;
 }
+/* .dropdown_menu.active {
+   
+}
+.show {
+    display: block !important;
+    border-radius: 0 0 .4vw .4vw;
+    border-top: none;
+} */
 
-.dropdown_menu div {
+.dropdown_menu .dropdown_item {
     padding: .7vw 1vw;
     cursor: pointer;
     white-space: nowrap;
 }
 
-.dropdown_menu div:hover {
+.dropdown_menu .dropdown_item:hover {
     background-color: #f0f0f0;
 }
 

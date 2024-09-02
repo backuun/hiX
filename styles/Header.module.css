@@ -1,3 +1,8 @@
+.navLayout {
+    position: sticky;
+    top: 0; /* atau nilai lainnya sesuai kebutuhan */
+    z-index: 1000; /* Opsional: untuk memastikan elemen berada di atas elemen lain */
+}
 .nav{
     background-color: white;
     display: grid;
@@ -172,6 +177,7 @@
         justify-content: space-between;
         padding: 1.9vw 4vw;
         padding-right: 4vw;
+        position: inherit;
     }
     .logo{
         padding-top: 0;
