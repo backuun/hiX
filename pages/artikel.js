@@ -175,7 +175,7 @@ export default function Blog(){
                         className="swiperArtikel swiperArtikelPage"
                     >
                         {items.map((item) => (
-                            <SwiperSlide>
+                            <SwiperSlide key={item.id}>
                                 <div className={styles.box_artikel}>
                                     <div className={styles.image_artikel}>
                                         <img src={`https://prahwa.net/storage/${item.image}`} alt={item.title} />
@@ -201,7 +201,7 @@ export default function Blog(){
                 <div className={styles.grid_artikel_container}>
                     <div className={styles.grid_artikel}>
                         {articles.map((article) => (
-                            <div className={styles.box_artikel}>
+                            <div className={styles.box_artikel} key={article.id}>
                                 <div className={styles.image_artikel}>
                                     <img src={`https://prahwa.net/storage/${article.image}`} alt={article.title} />
                                 </div>

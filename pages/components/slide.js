@@ -42,7 +42,7 @@ export default function Slide() {
         className="mySwiper"
       >
         {banners.map((banner) => (
-          <SwiperSlide>
+          <SwiperSlide key={banner.id}>
               <img src={`https://prahwa.net/storage/${banner.image}`} alt='Hixpress Banner' />
           </SwiperSlide>
         ))}
