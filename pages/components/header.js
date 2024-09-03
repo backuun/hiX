@@ -2,11 +2,11 @@ import styles from "@/styles/Header.module.css";
 import Link from "next/link";
 import { FaInstagram, FaFacebook, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { MdPhone, MdEmail } from "react-icons/md";
-import { LuSearch } from "react-icons/lu";
 import { useRouter } from "next/router";
 import { IoIosMenu } from "react-icons/io";
 import { IoCloseOutline, IoChevronDown } from "react-icons/io5";
 import { useState, useEffect } from "react";
+import Skeleton from "react-loading-skeleton";
 
 export default function Header() {
     const router = useRouter();
@@ -74,7 +74,7 @@ export default function Header() {
                             {logo ? (
                                 <img src={`https://prahwa.net/storage/${logo.image}`} alt="House Kari Logo" />
                             ) : (
-                                <span>Loading...</span> // Or a placeholder image
+                                <Skeleton width={150} height={50} /> // Atur ukuran Skeleton sesuai dengan ukuran logo
                             )}
                         </Link>
                     </div>

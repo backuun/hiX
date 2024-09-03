@@ -1,0 +1,202 @@
+.content_layout{
+    background-color: #009E96;
+    background-image: url(../public/images/overlay_green.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat-x;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.content_layout_blue{
+    background: linear-gradient(90deg, #1C0A56 0%, #280D6C 49.5%, #1C0A56 100%) !important;
+    background-image: url(../public/images/overlay_green.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat-x;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.image_content{
+    width: 100%;
+    height: 31vw;
+    position: relative;
+}
+.image_content img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+}
+.text_content{
+    padding: 3vw 6vw;
+    padding-right: 9vw;
+    color: white;
+}
+.text_content h1{
+    margin-bottom: 1.4vw;
+    font-size: 3vw;
+}
+.text_content p{
+    font-size: 1.1vw;
+    margin-bottom: 1.4vw;
+}
+
+.icon_section{
+    width: 100%;
+    background-image: url(../public/images/section3_bg.png), linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 158, 150, 0.212) 100%);
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6vw 7vw;
+    padding-bottom: 8vw;
+    position: relative;
+}
+.icon_heading{
+    text-align: center;
+    margin-bottom: 5vw;
+}
+.icon_heading h1{
+    color: #280D6C;
+    margin-bottom: 1vw;
+    font-size: 2.45vw;
+}
+.icon_heading p{
+    font-size: 1.1vw;
+    width: 58%;
+    display: block;
+    margin: auto;
+    color: #1A0353;
+}
+.icon_layout{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3vw;
+}
+.icon_box img{
+    width: 6vw;
+    margin-bottom: 1.3vw;
+}
+.icon_box h3{
+    color: #009E96;
+    font-size: 1.1vw;
+    margin-bottom: .8vw;
+}
+.icon_box p{
+    font-size: 1vw;
+    color: #1A0353;
+}
+
+.cta_section{
+    width: 100%;
+    background-image: url(../public/images/cta_sameday.png);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 7vw 3vw;
+}
+.cta_section h1{
+    color:white;
+    font-size: 3vw;
+    margin-bottom: 2.8vw;
+}
+.cta_section button{
+    font-size: 1.1vw;
+    background-color: #009E96;
+    color:white;
+    border: none;
+    outline: none;
+    padding: .98vw 2vw;
+    cursor: pointer;
+    border-radius: .6vw;
+}
+.divider{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.4vw;
+    z-index: 2;
+    background: linear-gradient(90deg, #00887E 0%, #009E96 49.5%, #00887E 100%);
+}
+
+@media (max-width:768px) {
+    .content_layout{
+        grid-template-columns: repeat(1, 1fr);
+        background-position: bottom center;
+    }
+    .image_content{
+        height: 61vw;
+    }
+    .text_content{
+        padding: 8vw 9vw;
+        padding-right: 12vw;
+    }
+    .text_content h1{
+        margin-bottom: 2.7vw;
+        font-size: 6.5vw;
+    }
+    .text_content p{
+        font-size: 3.4vw;
+        margin-bottom: 3.4vw;
+    }
+
+    .icon_section{
+        padding: 13vw 9vw;
+        padding-bottom: 16vw;
+    }
+    .icon_heading{
+        margin-bottom: 10vw;
+    }
+    .icon_heading h1{
+        margin-bottom: 3.8vw;
+        font-size: 6vw;
+    }
+    .icon_heading p{
+        font-size: 3.4vw;
+        width: 100%;
+    }
+    .icon_layout{
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 12vw;
+    }
+
+    .icon_box{
+        text-align: center;
+    }
+    .icon_box img{
+        width: 18vw;
+        margin-bottom: 2.7vw;
+    }
+    .icon_box h3{
+        color: #009E96;
+        font-size: 4vw;
+        margin-bottom: 2.6vw;
+    }
+    .icon_box p{
+        font-size: 3.4vw;
+        color: #1A0353;
+    }
+
+    .cta_section{
+        padding: 16vw 5vw;
+    }
+    .cta_section h1{
+        font-size: 5vw;
+        margin-bottom: 7vw;
+    }
+    .cta_section button{
+        font-size: 3.4vw;
+        padding: 2.7vw 5.6vw;
+        border-radius: 1.6vw;
+    }
+    .divider{
+        height: 3.4vw;
+    }
+}
